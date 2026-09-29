@@ -1229,12 +1229,6 @@ dialog.sheet::backdrop {
   overflow: hidden;
   background: var(--blush);
 }
-.slide.tall .ph {
-  width: min(300px, 60vw);
-}
-.slide.tall {
-  width: auto;
-}
 .slide img {
   width: 100%;
   height: 100%;
@@ -1632,9 +1626,20 @@ dialog.sheet::backdrop {
   color: var(--soft-ink);
   line-height: 1.5;
 }
-.li a {
+/* Linhas que são links (telefone e WhatsApp) */
+a.li {
   color: inherit;
   text-decoration: none;
+  border-radius: 16px;
+}
+a.li .ic {
+  transition:
+    background 0.25s var(--e),
+    color 0.25s var(--e);
+}
+a.li:hover .ic {
+  background: var(--red);
+  color: #fff;
 }
 .loc-in .row {
   display: flex;
@@ -1693,8 +1698,12 @@ dialog.sheet::backdrop {
 }
 .foot-g {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+  /* A coluna do meio (Contato) cresce o quanto precisar para o e-mail caber numa linha só */
+  grid-template-columns: minmax(0, 1.2fr) auto minmax(0, 1fr);
   gap: 48px 64px;
+}
+.foot .email {
+  white-space: nowrap;
 }
 .foot .brand b {
   color: #fff;
@@ -1868,7 +1877,7 @@ html.menu-open .mbar {
     font-size: 12px;
   }
 }
-/* Tablet: troca os links do menu pelo botão de menu */
+/* Tablet: troca os links do menu pelo botão de menu e o rodapé passa para duas colunas */
 @media (max-width: 1120px) {
   .links {
     display: none;
@@ -1878,6 +1887,13 @@ html.menu-open .mbar {
   }
   .nav .wrap > .btn {
     display: none;
+  }
+  .foot-g {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 36px 24px;
+  }
+  .foot-g > :first-child {
+    grid-column: 1/-1;
   }
 }
 /* Celular */
@@ -2011,12 +2027,8 @@ html.menu-open .mbar {
     padding: 60px 24px;
     border-radius: 30px;
   }
-  .foot-g {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 36px 24px;
-  }
-  .foot-g > :first-child {
-    grid-column: 1/-1;
+  .foot .email {
+    white-space: normal;
   }
   .final {
     padding-bottom: 80px;
