@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cardiofrequência — Clínica Médica em Angra dos Reis</title>
+  <meta name="description" content="Clínica médica e exames de imagem em Angra dos Reis. Atendemos KLINI Saúde. Agende pelo WhatsApp.">
+
+  <!-- Ícone que aparece na aba do navegador -->
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+
+  <!-- Fontes do site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!--
+  Os links com "data-wa" abrem o WhatsApp da clínica.
+  O texto dentro de data-wa é a mensagem que já vem escrita para o paciente.
+  O número do WhatsApp fica em js/main.js.
+-->
+
+<!-- ========== Menu do topo ========== -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Cardiofrequência, início">
+      <span class="mk"><img src="img/marca/simbolo.webp" alt=""></span>
+      <span class="tx"><b>CARDIO<span>FREQUÊNCIA</span></b><small>CLÍNICA MÉDICA</small></span>
+    </a>
+
+    <!-- Links do menu (computador) -->
+    <nav class="links" aria-label="Principal">
+      <a href="#exames">Exames</a>
+      <a href="#como-agendar">Como agendar</a>
+      <a href="#clinica">A clínica</a>
+      <a href="#localizacao">Onde estamos</a>
+    </nav>
+    <a class="btn btn-r" data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">Agendar exame</a>
+
+    <!-- Botão de menu (celular) -->
+    <button type="button" class="menubtn" id="menubtn" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menu"><i aria-hidden="true"></i><i aria-hidden="true"></i></button>
+  </div>
+
+  <!-- Menu que abre por cima da tela (celular) -->
+  <nav class="drawer" id="drawer" aria-label="Menu">
+    <a href="#exames">Exames</a>
+    <a href="#como-agendar">Como agendar</a>
+    <a href="#clinica">A clínica</a>
+    <a href="#localizacao">Onde estamos</a>
+    <div class="dfoot">
+      <a class="btn btn-r" data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a class="btn btn-w" href="tel:+552433650372">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Ligar (24) 3365-0372
+      </a>
+      <small>Todos os dias, das 8h às 17h30</small>
+    </div>
+  </nav>
+</header>
+
+<main id="topo">
+
+<!-- ========== Capa (primeira parte do site) ========== -->
+<section class="hero">
+  <div class="hero-g">
+    <div class="hero-l">
+      <h1>
+        <span class="ln"><span>Mais cuidado.</span></span>
+        <span class="ln"><span>Mais saúde.</span></span>
+        <span class="ln"><span><b>Mais você.</b></span></span>
+      </h1>
+      <p>Exames cardiológicos, ultrassom com doppler e endoscopia em Angra dos Reis, com cuidado, segurança e acolhimento.</p>
+      <div class="cta">
+        <a class="btn btn-r" data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn-w" href="#exames">Ver exames</a>
+      </div>
+
+      <!-- Horário (muda sozinho para "Aberto agora" / "Fechado agora"), convênio e agendamento -->
+      <dl class="facts">
+        <div>
+          <dt>Horário</dt>
+          <dd><span class="live" id="status"><i aria-hidden="true"></i><span id="statusTxt">Todos os dias</span></span><span id="statusSub">8h às 17h30</span></dd>
+        </div>
+        <div>
+          <dt>Convênio</dt>
+          <dd>KLINI Saúde<span>e particular</span></dd>
+        </div>
+        <div>
+          <dt>Agendamento</dt>
+          <dd>Pelo WhatsApp<span>com confirmação</span></dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- Foto grande da capa -->
+    <div class="hero-r" id="heroPh">
+      <img src="img/capa.webp" alt="Atendimento na Cardiofrequência" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- ========== Exames ========== -->
+<!-- Os cartões e a lista de exames são montados pelo js/main.js -->
+<section class="exams" id="exames">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><h2>Tudo o que você precisa, num só lugar.</h2></div>
+      <p>Escolha uma área para ver os exames e agendar.</p>
+    </div>
+    <div class="tiles" id="tiles"></div>
+  </div>
+</section>
+
+<!-- Faixa com os nomes dos exames passando -->
+<div class="ticker" aria-hidden="true"><div class="tk" id="tk"></div></div>
+
+<!-- ========== Como agendar ========== -->
+<section class="how" id="como-agendar">
+  <div class="wrap how-g">
+    <div class="how-l rv">
+      <h2>Agendar é só mandar uma mensagem.</h2>
+      <ol class="st" id="st">
+        <li><i>1</i>Você diz qual exame precisa</li>
+        <li><i>2</i>A gente confirma o horário</li>
+        <li><i>3</i>Você recebe as orientações</li>
+      </ol>
+      <a class="btn btn-r" data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/></svg>
+        Começar conversa
+      </a>
+    </div>
+
+    <!-- Celular desenhado com uma conversa de exemplo no WhatsApp -->
+    <div class="phone-w rv" aria-hidden="true">
+      <div class="phone">
+        <div class="screen">
+          <!-- Barra de hora, sinal e bateria -->
+          <div class="sbar">
+            <span>9:41</span>
+            <span><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx=".8"/><rect x="5" y="5.5" width="3" height="6.5" rx=".8"/><rect x="10" y="3" width="3" height="9" rx=".8"/><rect x="15" y="0" width="3" height="12" rx=".8"/></svg><svg viewBox="0 0 16 12" fill="currentColor"><path d="M8 2.3c2.4 0 4.6.9 6.2 2.5l1.3-1.4A10.6 10.6 0 0 0 8 .3 10.6 10.6 0 0 0 .5 3.4l1.3 1.4A8.7 8.7 0 0 1 8 2.3Zm0 3.9c1.3 0 2.5.5 3.4 1.4l1.4-1.4A6.7 6.7 0 0 0 8 4.2 6.7 6.7 0 0 0 3.2 6.2l1.4 1.4c.9-.9 2.1-1.4 3.4-1.4ZM8 10.3l2-2a2.8 2.8 0 0 0-4 0l2 2Z"/></svg><svg viewBox="0 0 27 12" fill="none"><rect x=".5" y=".5" width="22" height="11" rx="3.2" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="16" height="8" rx="2" fill="currentColor"/><path d="M24.5 4v4c.8-.3 1.3-1.1 1.3-2s-.5-1.7-1.3-2Z" fill="currentColor" opacity=".5"/></svg></span>
+          </div>
+
+          <!-- Topo da conversa -->
+          <div class="bar">
+            <svg class="back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+            <span class="av"><img src="img/marca/simbolo.webp" alt=""></span>
+            <span class="who"><b>Cardiofrequência</b><span>online</span></span>
+            <span class="act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="3"/><path d="m15.5 10.5 6-3.5v10l-6-3.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+          </div>
+
+          <!-- Mensagens (aparecem uma por uma) -->
+          <div class="msgs" id="msgs">
+            <span class="day">Hoje</span>
+            <div class="m me">Olá! Preciso fazer um Holter. Tem horário essa semana?<small>09:12</small></div>
+            <div class="m">Olá! Temos sim 😊 Quinta às 9h ou sexta às 14h. Qual fica melhor?<small>09:13</small></div>
+            <div class="m me">Quinta às 9h, por favor.<small>09:13</small></div>
+            <div class="m">Confirmado! ✅ Quinta, 9h. Venha com roupa confortável e sem creme no peito. Até lá!<small>09:14</small></div>
+            <div class="typing" id="typing"><i></i><i></i><i></i></div>
+          </div>
+
+          <!-- Campo de digitar -->
+          <div class="inp">
+            <span>Mensagem</span>
+            <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></i>
+          </div>
+        </div>
+        <img class="phone-frame" src="img/moldura-celular.webp" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== A clínica (fotos passando) ========== -->
+<section class="clinic" id="clinica">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div><h2>Um lugar feito para você se sentir em casa.</h2></div>
+      <div class="car-nav">
+        <button type="button" class="arw" id="cPrev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="arw" id="cNext" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fotos. A que tem "data-start" é a que aparece no meio quando a página abre. -->
+  <div class="track rv" id="track" aria-label="Fotos da clínica">
+    <div class="belt" id="belt">
+      <figure class="slide" data-start><div class="ph"><img src="img/clinica/fachada.webp" alt="Fachada da Cardiofrequência, número 125" loading="lazy"></div><figcaption>Nossa fachada</figcaption></figure>
+      <figure class="slide"><div class="ph"><img src="img/clinica/simbolo-recepcao.webp" alt="Recepção com o símbolo da clínica" loading="lazy"></div><figcaption>Nosso símbolo</figcaption></figure>
+      <figure class="slide"><div class="ph"><img src="img/clinica/sala-de-espera.webp" alt="Sala de espera" loading="lazy"></div><figcaption>Sala de espera</figcaption></figure>
+      <figure class="slide"><div class="ph"><img src="img/clinica/recepcao.webp" alt="Recepção" loading="lazy"></div><figcaption>Recepção</figcaption></figure>
+      <figure class="slide tall"><div class="ph"><img src="img/clinica/vitral.webp" alt="Vitral na escada" loading="lazy"></div><figcaption>O vitral da escada</figcaption></figure>
+      <figure class="slide"><div class="ph"><img src="img/clinica/sala-ultrassom.webp" alt="Consultório de ultrassom" loading="lazy"></div><figcaption>Ultrassom</figcaption></figure>
+      <figure class="slide"><div class="ph"><img src="img/clinica/sala-teste-ergometrico.webp" alt="Sala de teste ergométrico" loading="lazy"></div><figcaption>Teste ergométrico</figcaption></figure>
+      <figure class="slide"><div class="ph"><img src="img/clinica/sala-endoscopia.webp" alt="Sala de endoscopia" loading="lazy"></div><figcaption>Endoscopia</figcaption></figure>
+    </div>
+  </div>
+
+  <!-- Os três destaques -->
+  <div class="wrap">
+    <div class="vals">
+      <div class="val rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 20s-7-4.2-7-9.6A4 4 0 0 1 12 8a4 4 0 0 1 7 2.4c0 5.4-7 9.6-7 9.6Z"/></svg></span><b>Atendimento humanizado</b></div>
+      <div class="val rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M17 14.3c2.5.1 4.2 1.7 4.6 4.7"/></svg></span><b>Equipe qualificada</b></div>
+      <div class="val rv"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><b>Laudos com agilidade</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Convênio ========== -->
+<!-- As etiquetas com os exames de cada cartão são montadas pelo js/main.js -->
+<section class="conv" id="convenio">
+  <div class="wrap">
+    <div class="conv-grid">
+      <div class="conv-card conv-card--klini rv">
+        <div class="conv-l">
+          <h2>KLINI Saúde</h2>
+          <p>Convênio aceito para todos os exames da clínica, incluindo o ecocardiograma infantil.</p>
+          <a class="btn btn-w" data-wa="Tenho KLINI Saúde e gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">Agendar pelo convênio</a>
+        </div>
+        <div class="conv-r" id="klini"></div>
+      </div>
+      <div class="conv-card conv-card--particular rv">
+        <div class="conv-l">
+          <h2>Particular</h2>
+          <p>Todos os exames da clínica, com exceção do ecocardiograma infantil.</p>
+          <a class="btn btn-w" data-wa="Gostaria de agendar um exame particular. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">Agendar particular</a>
+        </div>
+        <div class="conv-r" id="particular"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Avaliações ========== -->
+<!-- Os textos das avaliações ficam em js/main.js -->
+<section class="revs" id="avaliacoes">
+  <div class="wrap">
+    <div class="rv-in rv">
+      <div class="rv-src"><span class="stars" id="stars" role="img" aria-label="5 de 5 estrelas"></span>Avaliações no Google</div>
+      <div class="quote" id="quote" aria-live="polite"></div>
+      <div class="rv-ctl">
+        <button type="button" class="arw" id="rPrev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="dots" id="dots"></div>
+        <button type="button" class="arw" id="rNext" aria-label="Próxima avaliação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <a class="glink" href="https://www.google.com/maps/search/?api=1&query=Cardiofrequ%C3%AAncia%20Angra%20dos%20Reis" target="_blank" rel="noopener">Ver todas no Google</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Onde estamos ========== -->
+<section class="loc" id="localizacao">
+  <div class="wrap">
+    <div class="loc-card rv">
+      <!-- O mapa só carrega quando a pessoa chega perto dessa parte. Enquanto isso, mostra o endereço. -->
+      <div class="loc-map" id="map" role="region" aria-label="Mapa com a localização da clínica">
+        <div class="map-ph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>Rua Dr. Orlando Gonçalves, 125<br>Parque das Palmeiras, Angra dos Reis</span>
+        </div>
+      </div>
+
+      <div class="loc-in">
+        <h2>Fácil de chegar.</h2>
+        <div class="li">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <span><b>Rua Dr. Orlando Gonçalves, 125</b><span>Parque das Palmeiras, Angra dos Reis</span></span>
+        </div>
+        <div class="li">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><b>Todos os dias</b><span>das 8h às 17h30</span></span>
+        </div>
+        <div class="li">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+          <span><b><a href="tel:+552433650372">(24) 3365-0372</a></b><span>Telefone</span></span>
+        </div>
+        <div class="li">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9.2 8.6c0 3 2.3 5.6 5.4 5.9l.9-1.4-1.6-.9-.8.7a4 4 0 0 1-2.1-2.1l.7-.8-.9-1.6-1.4.9"/></svg></span>
+          <span><b><a data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">(24) 99205-8362</a></b><span>WhatsApp</span></span>
+        </div>
+        <div class="row">
+          <a class="btn btn-r" href="https://www.google.com/maps/search/?api=1&query=Rua%20Dr.%20Orlando%20Gon%C3%A7alves%2C%20125%20-%20Parque%20das%20Palmeiras%2C%20Angra%20dos%20Reis%20-%20RJ" target="_blank" rel="noopener">Abrir no mapa</a>
+          <a class="btn btn-w" href="https://waze.com/ul?ll=-22.9986759%2C-44.3035509&navigate=yes" target="_blank" rel="noopener">Waze</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Chamada final ========== -->
+<section class="final">
+  <div class="wrap">
+    <div class="fin rv">
+      <h2>Cuide do seu coração <b>hoje.</b></h2>
+      <p>Mande uma mensagem e a nossa equipe encontra o melhor horário para você.</p>
+      <div class="cta">
+        <a class="btn btn-r" data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a class="btn btn-w" href="tel:+552433650372">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Ligar (24) 3365-0372
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ========== Rodapé ========== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-g">
+      <div>
+        <a class="brand" href="#topo">
+          <span class="mk"><img src="img/marca/simbolo-branco.webp" alt=""></span>
+          <span class="tx"><b>CARDIO<span>FREQUÊNCIA</span></b><small>CLÍNICA MÉDICA</small></span>
+        </a>
+        <p>Saúde do seu coração em boas mãos.</p>
+        <div class="soc">
+          <a href="https://www.instagram.com/clinicacardiofrequencia" target="_blank" rel="noopener" aria-label="Instagram da Cardiofrequência"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
+          <a data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener" aria-label="WhatsApp da Cardiofrequência"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9.2 8.6c0 3 2.3 5.6 5.4 5.9l.9-1.4-1.6-.9-.8.7a4 4 0 0 1-2.1-2.1l.7-.8-.9-1.6-1.4.9"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contato</h3>
+        <ul class="fl">
+          <li><a data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9.2 8.6c0 3 2.3 5.6 5.4 5.9l.9-1.4-1.6-.9-.8.7a4 4 0 0 1-2.1-2.1l.7-.8-.9-1.6-1.4.9"/></svg></span><span><small>WhatsApp</small>(24) 99205-8362</span></a></li>
+          <li><a href="tel:+552433650372"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span><small>Telefone</small>(24) 3365-0372</span></a></li>
+          <li><a href="mailto:clinicacardiofrequencia@gmail.com"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span><span><small>E-mail</small>clinicacardiofrequencia<wbr>@gmail.com</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Endereço</h3>
+        <ul class="fl">
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Rua%20Dr.%20Orlando%20Gon%C3%A7alves%2C%20125%20-%20Parque%20das%20Palmeiras%2C%20Angra%20dos%20Reis%20-%20RJ" target="_blank" rel="noopener"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span>Rua Dr. Orlando Gonçalves, 125<br>Parque das Palmeiras<br>Angra dos Reis, RJ</span></a></li>
+          <li><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><small>Horário</small>Todos os dias, 8h às 17h30</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-b"><span>© 2026 Cardiofrequência. <span class="nw">CNPJ 32.013.032/0001-18</span></span></div>
+  </div>
+</footer>
+
+<!-- Painel lateral que abre quando a pessoa clica em uma área de exames -->
+<dialog class="sheet" id="sheet" aria-labelledby="shTitle">
+  <div class="sh-top">
+    <img id="shImg" alt="">
+    <h3 id="shTitle"></h3>
+    <button type="button" class="sh-x" id="shX" aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3 3 13"/></svg></button>
+  </div>
+  <div class="sh-body">
+    <p>Toque em um exame para saber mais e agendar.</p>
+    <div id="shList"></div>
+  </div>
+</dialog>
+
+<!-- Barra fixa com Ligar e WhatsApp (só aparece no celular) -->
+<div class="mbar">
+  <a class="btn btn-w" href="tel:+552433650372">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    Ligar
+  </a>
+  <a class="btn btn-r" data-wa="Gostaria de agendar um exame. Poderiam me ajudar?" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
