@@ -228,7 +228,7 @@ function renderCategoryTiles() {
     const countLabel = count + (count > 1 ? " exames" : " exame");
     return (
       '<button type="button" class="tile rv" data-index="' + index + '">' +
-        '<img src="' + category.img + '" alt="" loading="lazy">' +
+        '<img src="' + category.img + '" srcset="' + category.img.replace(".webp", "-600.webp") + " 600w, " + category.img + ' 1200w" sizes="(max-width: 900px) calc(100vw - 40px), 33vw" alt="" loading="lazy">' +
         '<span class="in">' +
           "<span><h3>" + category.name + "</h3><small>" + countLabel + "</small></span>" +
           '<span class="go">' + ICON_ARROW + "</span>" +

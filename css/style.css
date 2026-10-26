@@ -3,6 +3,50 @@
   O arquivo segue a mesma ordem das partes da página, de cima para baixo.
 */
 
+/* Fontes do site, guardadas na pasta fonts (licença em fonts/OFL.txt) */
+@font-face {
+  font-family: "Stack Sans Headline";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/stack-sans-headline-latin-300-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Headline";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/stack-sans-headline-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/stack-sans-headline-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Text";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/stack-sans-text-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Text";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/stack-sans-text-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Text";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/stack-sans-text-latin-600-normal.woff2") format("woff2");
+}
+
 /* Cores, animações e sombra usadas no site todo. Para trocar uma cor, é só mudar aqui. */
 :root {
   --ivory: #fbf7f5;
@@ -408,11 +452,24 @@ h3 {
   display: inline-block;
   animation: up 1s var(--ed) both;
 }
-.hero h1 .ln:nth-child(2) > span {
+.hero h1 .ln:nth-child(3) > span {
   animation-delay: 0.09s;
 }
-.hero h1 .ln:nth-child(3) > span {
+.hero h1 .ln:nth-child(4) > span {
   animation-delay: 0.18s;
+}
+/* Linha pequena acima do título com o nome da clínica e a cidade */
+.hero h1 .kicker {
+  display: block;
+  margin-bottom: 20px;
+  font-family: "Stack Sans Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: fade 0.8s var(--e) both;
 }
 @keyframes up {
   from {
