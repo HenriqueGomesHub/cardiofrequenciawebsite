@@ -47,6 +47,7 @@
       "streetAddress": "Rua Dr. Orlando Gonçalves, 125, Parque das Palmeiras",
       "addressLocality": "Angra dos Reis",
       "addressRegion": "RJ",
+      "postalCode": "23906-540",
       "addressCountry": "BR"
     },
     "geo": {
@@ -102,10 +103,10 @@
   <link rel="icon" href="favicon/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
 
-  <!-- Fontes do site -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&family=Stack+Sans+Text:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Carrega antes a foto da capa e as duas fontes do título e do texto, para a página aparecer mais rápido -->
+  <link rel="preload" as="image" href="img/capa.webp" imagesrcset="img/capa-480.webp 480w, img/capa-800.webp 800w, img/capa-1200.webp 1200w, img/capa-1600.webp 1600w, img/capa.webp 2048w" imagesizes="(max-width: 900px) calc(100vw - 40px), max(52vw, 720px)" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/stack-sans-headline-latin-300-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/stack-sans-text-latin-400-normal.woff2" crossorigin>
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -198,7 +199,7 @@
 
     <!-- Foto grande da capa -->
     <div class="hero-r" id="heroPh">
-      <img src="img/capa.webp" width="2048" height="2560" alt="Atendimento na Cardiofrequência" fetchpriority="high">
+      <img src="img/capa.webp" srcset="img/capa-480.webp 480w, img/capa-800.webp 800w, img/capa-1200.webp 1200w, img/capa-1600.webp 1600w, img/capa.webp 2048w" sizes="(max-width: 900px) calc(100vw - 40px), max(52vw, 720px)" width="2048" height="2560" alt="Atendimento na Cardiofrequência" fetchpriority="high">
     </div>
   </div>
 </section>

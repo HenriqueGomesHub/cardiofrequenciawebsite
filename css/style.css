@@ -3,6 +3,50 @@
   O arquivo segue a mesma ordem das partes da página, de cima para baixo.
 */
 
+/* Fontes do site, guardadas na pasta fonts (licença em fonts/OFL.txt) */
+@font-face {
+  font-family: "Stack Sans Headline";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/stack-sans-headline-latin-300-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Headline";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/stack-sans-headline-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Headline";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/stack-sans-headline-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Text";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/stack-sans-text-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Text";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/stack-sans-text-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Stack Sans Text";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/stack-sans-text-latin-600-normal.woff2") format("woff2");
+}
+
 /* Cores, animações e sombra usadas no site todo. Para trocar uma cor, é só mudar aqui. */
 :root {
   --ivory: #fbf7f5;
